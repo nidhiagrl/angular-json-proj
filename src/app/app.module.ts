@@ -6,10 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { JsonService } from './json.service';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpClientModule ],
-  declarations: [ AppComponent, HelloComponent ],
+  declarations: [ AppComponent, HelloComponent, MenuComponent ],
   bootstrap:    [ AppComponent ],
   providers: [JsonService]
 })
