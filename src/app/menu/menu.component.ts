@@ -7,14 +7,16 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   @Input() menuData :any;
+  displayChild :boolean = false;
   constructor() { }
 
   ngOnInit() {
     
   }
-  // hasChildren(obj){
-  //   return typeof this.menuData[obj] !== "object";
-  // }
+  showChild(){
+     this.displayChild  =  !this.displayChild;
+  }
+
 
 
 }
