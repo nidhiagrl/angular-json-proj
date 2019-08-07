@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { JsonService } from './json.service';
 
 @Component({
@@ -6,14 +6,13 @@ import { JsonService } from './json.service';
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ]
 })
-export class AppComponent  {
-    constructor(private jser: JsonService) {
-
-  }
-  getData(){
-    alert('Say Hi!');
-    this.jser.getConfig().subscribe((data:object) => {
-      console.log(data);
-    })
-  }
+export class AppComponent implements OnInit {
+     jsonData :any;
+    constructor(private jser: JsonService) { }
+  
+   ngOnInit(){
+      this.jser.getConfig().subscribe((data:object) => {
+      this.jsonData = data;
+      })
+   }
   }

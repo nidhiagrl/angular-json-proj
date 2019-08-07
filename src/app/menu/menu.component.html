@@ -1,14 +1,20 @@
-<p>
-  The menu works!
-</p>
-<button class="btn btn-primary" (click)="getData()">The data </button>
-<!-- <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
-    Dropdown button
+<div *ngFor="let elem of menuData">
+      <!-- <ul>
+       <li>
+         {{elem['Label']}}
+         <menu [menuData]="elem['Items']" *ngIf="elem['Items']"></menu>
+       </li>
+      </ul> -->
+      <div *ngIf="elem['Items']">
+   <button type="button" class="btn btn-primary dropdown-toggle">
+   {{elem['Label']}}
   </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
   </div>
-</div> -->
+   <div *ngIf="!elem['Items']">
+ <button type="button" class="btn btn-primary">
+   {{elem['Label']}}
+  </button>
+  </div>
+  <menu [menuData]="elem['Items']" *ngIf="elem['Items']"></menu>
+    </div>
+
