@@ -1,0 +1,17 @@
+<div class= "btn-group-vertical btn-group-justified">
+<div class="btn-group" *ngFor="let elem of menuData">
+    <div  *ngIf="elem['Items']" >
+   <button type="button" class="btn btn-primary dropdown-toggle" (click)="showChild()">
+   {{elem['Label']}}
+  </button>
+  </div>
+   <div *ngIf="!elem['Items']">
+ <button type="button" class="btn btn-primary">
+   {{elem['Label']}} 
+  </button>
+  </div>
+  <menu [menuData]="elem['Items']" *ngIf= "elem['Items'] && displayChild"></menu>
+    </div>
+    </div>
+
+
