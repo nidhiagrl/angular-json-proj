@@ -1,3 +1,9 @@
 .btn-primary {
     border-radius: 0;
 }
+.style {
+  margin: 0px;
+}
+.btn-group {
+  display: inline;
+}
